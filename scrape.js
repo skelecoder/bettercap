@@ -33,9 +33,6 @@ async function scrapeData() {
     }
     // Close the browser
     await browser.close();
-
-    // Return the extracted data
-    return { title, content };
 }
 
-scrapeData().then((data) => {});
+scrapeData();
