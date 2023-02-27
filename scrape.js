@@ -19,16 +19,16 @@ async function scrapeData() {
         const firstCell = sheet[XLSX.utils.encode_cell({ r: rowNum, c: 0 })];
 
 		// Print content
-        console.log("host: " + secondCell["w"]); 
+        console.log("host: " + firstCell["w"]); 
 
 		// Get title of each website
         try {
-            await page.goto("https://" + secondCell["w"]);
+            await page.goto("https://" + firstCell["w"]);
             const title = await page.title();
             console.log(title);
 		// If website is not reachable, print failed
         } catch (err) {
-            console.log("failed");
+            console.log(err);
         }
     }
     // Close the browser
